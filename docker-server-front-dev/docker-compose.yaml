@@ -1,0 +1,54 @@
+version: '3'
+
+services: 
+
+  wppconnect-server:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    image: wppconnect-server
+    container_name: wppconnect-server
+    hostname: wppconnect-server
+    volumes:
+      - ./wppconnect-server/app:/home/node/app
+      - /home/node/app/node_modules
+    entrypoint: docker-entrypoint.sh yarn dev
+    networks: 
+      - wpp-network
+    tty: true
+  
+  wppconnect-front:
+    build: 
+      context: ./wppconnect-front
+      dockerfile: Dockerfile
+    image: wppconnect-front
+    container_name: wppconnect-front
+    hostname: wppconnect-front
+    volumes:
+      - ./wppconnect-front/app:/home/node/app
+      - /home/node/app/node_modules
+    entrypoint: docker-entrypoint.sh yarn start
+    networks: 
+      - wpp-network
+    tty: true
+    depends_on:
+      - wppconnect-server
+
+  wppconnect-nginx:
+    build: 
+      context: ./wppconnect-nginx
+      dockerfile: Dockerfile
+    container_name: wppconnect-nginx
+    hostname: wppconnect-nginx
+    entrypoint: nginx -g "daemon off;"
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    networks: 
+      - wpp-network
+    depends_on:
+      - wppconnect-front
+
+networks: 
+  wpp-network:
+    driver: bridge 

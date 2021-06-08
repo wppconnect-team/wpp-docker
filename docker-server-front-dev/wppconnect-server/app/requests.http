@@ -1,0 +1,120 @@
+# Admin Function
+
+### Genereate Token
+POST http://localhost:21465/api/sessao1/THISISMYSECURETOKEN/generate-token
+
+
+#$2b$10$XyEOmzeVO6Un06EftLYF6unlLOm_DkPkvzRhGxW3gbZHj3vnHhPAO 1
+#$2b$10$JxipHKU0kBVlJ_RRZgKLvOKHm9nGGnlXtWFiJegijYPR1XzMW8HQe 2
+#$2b$10$17q0IXG_.ERu.plsTI6Z8uooFpjyLP5esGWUxwvgQdUNhgyZ6CYnu 3
+
+###############################################################################################
+
+# Session Function
+
+### Start Session
+POST http://localhost:21465/api/abner/start-session
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer $2b$10$kLv5a3fM_.q7nPMHfPedeuS_QBHiIdByM.Goy4gsC4qfnGl11nJi2
+
+### Close Session
+POST http://localhost:21465/api/abner/close-session
+Accept: application/json;
+Content-Type: application/json;
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai
+
+###############################################################################################
+
+# Message Functions
+
+### Send Message
+POST http://localhost:21465/api/abner/send-message
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$kLv5a3fM_.q7nPMHfPedeuS_QBHiIdByM.Goy4gsC4qfnGl11nJi2
+
+{
+  "phone": "5511982743910,5511982743910,5511982743910,5511982743910,5511982743910,5511982743910,5511982743910,5511982743910,5511982743910",
+  "message": "*Abner* Rodrigues"
+}
+
+### Send Image
+POST http://localhost:21465/api/abner/send-image
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
+
+{
+  "phone": "5511982743910",
+  "caption": "*Abner* Rodrigues",
+  "path": "C:\\path\\image.png",
+  "isGroup": false
+}
+
+### Send File
+POST http://localhost:21465/api/abner/send-file
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
+
+{
+  "phone": "5511982743910",
+  "path": "C:\\path\\image.png",
+  "isGroup": false
+}
+
+###############################################################################################
+
+# Group Functions
+
+### Create Group
+POST http://localhost:21465/api/abner/create-group
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
+
+{
+  "phone": "5511982743910",
+  "groupname": "Group Name"
+}
+
+### Join Group with InviteCode
+POST http://localhost:21465/api/abner/join-code
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
+
+{
+  "inviteCode": "Invite Code"
+}
+
+#############################################################################################
+
+# Device Functions
+
+### Change Username
+POST http://localhost:21465/api/abner/change-username
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
+
+{
+  "name": "New Username"
+}
+
+### Change Profile Image
+POST http://localhost:21465/api/abner/change-profile-image
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
+
+{
+  "path": "C:\\path\\image.png"
+}
+
+### Change Profile Image
+GET http://localhost:21465/api/abner/show-all-contacts
+Content-Type:application/json; charset=utf-8
+Accept: application/json
+Authorization: Bearer $2b$10$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm
