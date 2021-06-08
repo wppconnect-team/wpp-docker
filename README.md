@@ -18,7 +18,7 @@ Simply download the folder to install:
 
 ---
 
-- Docker #2: Deploy do Server e Front-end utilizando Containers.
+- Docker#2: Configurando um ambiente de desenvolvimento para o WPPConnect.
   - folder: [docker-server-front-dev](./docker-server-front-dev)
   - **IMPORTANT: You need to create the folder "/app" with the current version (wppconnect-server and wppconnect-front)**
 
