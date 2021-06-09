@@ -14,7 +14,7 @@ Simply download the folder to install:
 - Docker #1: Deploy do Server e Front-end utilizando Containers.
   - folder: [docker-server-front](./docker-server-front)
 
-[![WPPConnect!](https://user-images.githubusercontent.com/3454381/120873436-708d7c00-c578-11eb-88db-ecf4af85ab4c.png)](https://youtu.be/TQJ4ID1vs_c)
+[![WPPConnect!](https://user-images.githubusercontent.com/3454381/121362579-92865600-c90c-11eb-9b21-d8b445889eb1.jpeg)](https://youtu.be/TQJ4ID1vs_c)
 
 ---
 
@@ -22,7 +22,7 @@ Simply download the folder to install:
   - folder: [docker-server-front-dev](./docker-server-front-dev)
   - **IMPORTANT: You need to create the folder "/app" with the current version (wppconnect-server and wppconnect-front)**
 
-[![WPPConnect!](https://user-images.githubusercontent.com/3454381/121250198-d2e9c380-c87b-11eb-95a3-2b767d1c5622.png)](https://www.youtube.com/watch?v=kDHbf1TWkBw)
+[![WPPConnect!](https://user-images.githubusercontent.com/3454381/121362642-9e721800-c90c-11eb-9c40-a314f50f69be.jpeg)](https://www.youtube.com/watch?v=kDHbf1TWkBw)
 
 ## Commands
 
