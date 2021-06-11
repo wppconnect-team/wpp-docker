@@ -20,5 +20,10 @@
             "console",
             "file"
         ]
+    },
+    "createOptions": {
+        "browserArgs": [
+            "--no-sandbox"
+        ]
     }
 }
