@@ -54,9 +54,10 @@ $ docker stats [service name...]
 Please see [all](https://docs.docker.com/reference/) Docker commands.
 
 ## Roadmap (PT-BR)
-- Docker #3: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
-- Docker #4: Usando webhook com Client PHP e MySQL em containers.
-- Docker #5: Subindo “N” servidores do WPPConnect com apenas um comando.
+- Docker #3: Instalando o certificado https no nginx.
+- Docker #4: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
+- Docker #5: Usando webhook com Client PHP e MySQL em containers.
+- Docker #6: Subindo “N” servidores do WPPConnect com apenas um comando.
 
 ## Postman
 To learn more about [Postman Collection to WPPConnect](https://www.postman.com/hbdbim/workspace/wppconnect-server).
