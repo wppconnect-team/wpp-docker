@@ -50,7 +50,6 @@ View output from stats.
 ``` bash
 $ docker stats [service name...]
 ```
-
 Please see [all](https://docs.docker.com/reference/) Docker commands.
 
 ## Roadmap (PT-BR)
