@@ -1,66 +1,94 @@
 # WPPConnect Team
 ## _Wppconnect Docker_
 
-Easily build Docker images with different versions/combinations of common languages/dependencies, for use on WPPConnect.
+Crie facilmente imagens do Docker com diferentes versões/combinações de linguagens e dependências comuns, para uso no WPPConnect.
 
-## Requirements
+## Requisitos
 
-* Docker [3.x](https://www.docker.com/get-started) or newer
+* Docker [3.x](https://www.docker.com/get-started) ou mais recente.
 
-## Install
+## Instalação
 
-Simply download the folder to install:
+Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 
-- Docker #1: Deploy do Server e Front-end utilizando Containers.
-  - folder: [docker-server-front](./docker-server-front)
+- Docker #1: Deploy do Server e Front-end utilizando Contêineres.
+  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=TQJ4ID1vs_c
+  - Pasta: [docker-server-front](./docker-server-front)
+  
+- Docker #2: Configurando um ambiente de desenvolvimento para o WPPConnect.
+  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=kDHbf1TWkBw
+  - Pasta: [docker-server-front-dev](./docker-server-front-dev)
+    - **IMPORTANTE: Utilize os arquivos de configuração do tutorial anterior ([Docker#1](https://www.youtube.com/watch?v=TQJ4ID1vs_c)) e crie pasta "/app" com a versão atual dos repositórios ([wppconnect-server](https://github.com/wppconnect-team/wppconnect-server) e [wppconnect-front](https://github.com/wppconnect-team/wppconnect-frontend)) dentro de suas respectivas aplicações.**
 
-[![WPPConnect!](https://user-images.githubusercontent.com/3454381/121362579-92865600-c90c-11eb-9b21-d8b445889eb1.jpeg)](https://youtu.be/TQJ4ID1vs_c)
+- Docker #3:  Subindo tudo com apenas uma linha de comando utilizando o server-cli
+  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=zBmCnPS3JOQ
 
----
+- Docker #4: Configurando um certificado https para o localhost.
+  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=Mk0sIYJ6peE
 
-- Docker#2: Configurando um ambiente de desenvolvimento para o WPPConnect.
-  - folder: [docker-server-front-dev](./docker-server-front-dev)
-  - **IMPORTANT: You need to create the folder "/app" with the current version (wppconnect-server and wppconnect-front)**
+## Comandos Utilizados
 
-[![WPPConnect!](https://user-images.githubusercontent.com/3454381/121362642-9e721800-c90c-11eb-9c40-a314f50f69be.jpeg)](https://www.youtube.com/watch?v=kDHbf1TWkBw)
-
-## Commands
-
-Builds, (re)creates, starts, and attaches to containers for a service.
+Compila, (re)cria, inicia e anexa um contêiner para um serviço:
 ``` bash
 $ docker-compose up --build
 ```
 
-Stop and remove containers, networks.
+Para e remove todos o(s) contêiner(es) e a(s) rede(s):
 ``` bash
 $ docker-compose down
 ```
 
-List images used by the created containers.
+Inicia o(s) contêiner(es):
+``` bash
+$ docker-compose start [nome do serviço...]
+```
+
+Para o(s) contêiner(es):
+``` bash
+$ docker-compose stop [nome do serviço...]
+```
+
+Lista as imagens usadas pelos contêineres criados:
 ``` bash
 $ docker images
 ```
 
-View output from containers.
+Visualiza os logs dos contêineres.
 ``` bash
-$ docker logs [service name...]
+$ docker logs [nome do serviço...]
 ```
 
-View output from stats.
+Visualiza as estatística dos contêineres como: consumo de cpu, memória, etc...
 ``` bash
-$ docker stats [service name...]
+$ docker stats [nome do serviço....]
 ```
 
-Please see [all](https://docs.docker.com/reference/) Docker commands.
+Exclui todos os processos/serviços do computador local:
+``` bash
+$ docker rm $(docker ps -a -q) -f  
+```
 
-## Roadmap (PT-BR)
-- Docker #3: Instalando o certificado https no nginx.
-- Docker #4: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
-- Docker #5: Usando webhook com Client PHP e MySQL em containers.
-- Docker #6: Subindo “N” servidores do WPPConnect com apenas um comando.
+Exclui todas as imagens do computador local:
+``` bash
+$ docker rmi $(docker images -a -q) -f
+```
+
+Remove o cache do builder:
+``` bash
+$ docker builder prune
+```
+
+Remove as redes não utilizadas:
+``` bash
+$ docker network prune
+```
+
+Acesse o [link](https://docs.docker.com/reference/) para ver todos os comandos do Docker.
+
+## Roadmap (Próximos Vídeos/Tutoriais)
+- Docker #5: Configurando 5 Servers do o WPPConnect com load balancing utilizando o Ngnix.
+- Docker #6: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
+- Docker #7: Usando webhook com Client PHP e MySQL em contêineres.
 
 ## Postman
-To learn more about [Postman Collection to WPPConnect](https://www.postman.com/hbdbim/workspace/wppconnect-server).
-
-## License
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Acesse o [Postman Collection do WPPConnect](https://www.postman.com/hbdbim/workspace/wppconnect-server) com todos os endpoints.
