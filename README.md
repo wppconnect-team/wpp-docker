@@ -18,13 +18,18 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 ### Docker #2: Configurando um ambiente de desenvolvimento para o WPPConnect.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=kDHbf1TWkBw
   - Pasta: [docker-server-front-dev](./docker-server-front-dev)
-    - <sub>IMPORTANTE: Utilize os arquivos de configuração do tutorial anterior ([Docker#1](https://www.youtube.com/watch?v=TQJ4ID1vs_c)) e crie pasta "/app" com a versão atual dos repositórios ([wppconnect-server](https://github.com/wppconnect-team/wppconnect-server) e [wppconnect-front](https://github.com/wppconnect-team/wppconnect-frontend)) dentro de suas respectivas aplicações.</sub>
+    - Utilize os arquivos de configuração do tutorial anterior ([Docker#1](https://www.youtube.com/watch?v=TQJ4ID1vs_c)) e crie pasta "/app" com a versão atual dos repositórios ([wppconnect-server](https://github.com/wppconnect-team/wppconnect-server) e [wppconnect-front](https://github.com/wppconnect-team/wppconnect-frontend)) dentro de suas respectivas aplicações.
 
 ### Docker #3:  Subindo tudo com apenas uma linha de comando utilizando o server-cli
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=zBmCnPS3JOQ
 
 ### Docker #4: Configurando um certificado https para o localhost.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=Mk0sIYJ6peE
+
+## Roadmap (Próximos Vídeos/Tutoriais)
+- Docker #5: Configurando 5 Servers do o WPPConnect com load balancing utilizando o Ngnix.
+- Docker #6: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
+- Docker #7: Usando webhook com Client PHP e MySQL em contêineres.
 
 ## Comandos Utilizados
 
@@ -84,11 +89,6 @@ $ docker network prune
 ```
 
 Acesse o [link](https://docs.docker.com/reference/) para ver todos os comandos do Docker.
-
-## Roadmap (Próximos Vídeos/Tutoriais)
-- Docker #5: Configurando 5 Servers do o WPPConnect com load balancing utilizando o Ngnix.
-- Docker #6: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
-- Docker #7: Usando webhook com Client PHP e MySQL em contêineres.
 
 ## Postman
 Acesse o [Postman Collection do WPPConnect](https://www.postman.com/hbdbim/workspace/wppconnect-server) com todos os endpoints.
