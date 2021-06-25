@@ -11,20 +11,20 @@ Crie facilmente imagens do Docker com diferentes versões/combinações de lingu
 
 Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 
-- Docker #1: Deploy do Server e Front-end utilizando Contêineres.
-  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=TQJ4ID1vs_c
+### Docker #1: Deploy do Server e Front-end utilizando Contêineres.
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=TQJ4ID1vs_c
   - Pasta: [docker-server-front](./docker-server-front)
   
-- Docker #2: Configurando um ambiente de desenvolvimento para o WPPConnect.
-  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=kDHbf1TWkBw
+### Docker #2: Configurando um ambiente de desenvolvimento para o WPPConnect.
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=kDHbf1TWkBw
   - Pasta: [docker-server-front-dev](./docker-server-front-dev)
     - **IMPORTANTE: Utilize os arquivos de configuração do tutorial anterior ([Docker#1](https://www.youtube.com/watch?v=TQJ4ID1vs_c)) e crie pasta "/app" com a versão atual dos repositórios ([wppconnect-server](https://github.com/wppconnect-team/wppconnect-server) e [wppconnect-front](https://github.com/wppconnect-team/wppconnect-frontend)) dentro de suas respectivas aplicações.**
 
-- Docker #3:  Subindo tudo com apenas uma linha de comando utilizando o server-cli
-  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=zBmCnPS3JOQ
+### Docker #3:  Subindo tudo com apenas uma linha de comando utilizando o server-cli
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=zBmCnPS3JOQ
 
-- Docker #4: Configurando um certificado https para o localhost.
-  - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=Mk0sIYJ6peE
+### Docker #4: Configurando um certificado https para o localhost.
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=Mk0sIYJ6peE
 
 ## Comandos Utilizados
 
