@@ -18,7 +18,7 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 ### Docker #2: Configurando um ambiente de desenvolvimento para o WPPConnect.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=kDHbf1TWkBw
   - Pasta: [docker-server-front-dev](./docker-server-front-dev)
-    - **IMPORTANTE: Utilize os arquivos de configuração do tutorial anterior ([Docker#1](https://www.youtube.com/watch?v=TQJ4ID1vs_c)) e crie pasta "/app" com a versão atual dos repositórios ([wppconnect-server](https://github.com/wppconnect-team/wppconnect-server) e [wppconnect-front](https://github.com/wppconnect-team/wppconnect-frontend)) dentro de suas respectivas aplicações.**
+    - <sub>IMPORTANTE: Utilize os arquivos de configuração do tutorial anterior ([Docker#1](https://www.youtube.com/watch?v=TQJ4ID1vs_c)) e crie pasta "/app" com a versão atual dos repositórios ([wppconnect-server](https://github.com/wppconnect-team/wppconnect-server) e [wppconnect-front](https://github.com/wppconnect-team/wppconnect-frontend)) dentro de suas respectivas aplicações.</sub>
 
 ### Docker #3:  Subindo tudo com apenas uma linha de comando utilizando o server-cli
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=zBmCnPS3JOQ
