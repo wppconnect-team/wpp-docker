@@ -26,8 +26,11 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 ### Docker #4: Configurando um certificado https para o localhost.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=Mk0sIYJ6peE
 
+### Docker #5: Configurando 5 Servers do o WPPConnect com load balancing utilizando o Nginx.
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=nfc-yDrtnMQ
+  - Pasta: [docker-server-load-balancing](./docker-server-load-balancing)
+
 ## Roadmap (Próximos Vídeos/Tutoriais)
-- Docker #5: Configurando 5 Servers do o WPPConnect com load balancing utilizando o Ngnix.
 - Docker #6: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
 - Docker #7: Usando webhook com Client PHP e MySQL em contêineres.
 
