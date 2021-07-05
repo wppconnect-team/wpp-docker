@@ -44,4 +44,5 @@ services:
 
 networks: 
   wpp-network:
+    name: wpp-network
     driver: bridge 

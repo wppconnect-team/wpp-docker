@@ -1,0 +1,30 @@
+{
+  "name": "wpp-docker",
+  "version": "1.0.0",
+  "description": "Easily build Docker images with different versions/combinations of common languages/dependencies, for use on WPPConnect.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wppconnect-team/wpp-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wppconnect-team/wpp-docker/issues"
+  },
+  "homepage": "https://github.com/wppconnect-team/wpp-docker#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^6.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
