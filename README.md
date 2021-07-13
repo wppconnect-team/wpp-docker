@@ -33,7 +33,7 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 ### Docker #4: Configurando um certificado https para o localhost.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=Mk0sIYJ6peE
 
-### Docker #5: Configurando 5 Servers do o WPPConnect com load balancing utilizando o Nginx.
+### Docker #5: Configurando 5 Servers do WPPConnect com load balancing utilizando o Nginx.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=nfc-yDrtnMQ
   - Pasta: [docker-server-load-balancing](./docker-server-load-balancing)
 
@@ -55,12 +55,12 @@ $ docker-compose down
 
 Inicia o(s) contêiner(es):
 ``` bash
-$ docker-compose start [nome do serviço...]
+$ docker-compose start [nomedoserviço...]
 ```
 
 Para o(s) contêiner(es):
 ``` bash
-$ docker-compose stop [nome do serviço...]
+$ docker-compose stop [nomedoserviço...]
 ```
 
 Lista as imagens usadas pelos contêineres criados:
@@ -70,12 +70,12 @@ $ docker images
 
 Visualiza os logs dos contêineres.
 ``` bash
-$ docker logs [nome do serviço...]
+$ docker logs [nomedoserviço...]
 ```
 
 Visualiza as estatística dos contêineres como: consumo de cpu, memória, etc...
 ``` bash
-$ docker stats [nome do serviço....]
+$ docker stats [nomedoserviço....]
 ```
 
 Exclui todos os processos/serviços do computador local:
