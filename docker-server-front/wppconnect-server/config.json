@@ -1,5 +1,5 @@
 {
-  "secretKey": "THISISMYSECURETOKEN",
+  "secretKey": "My53cr3tKY",
   "host": "http://localhost",
   "port": "21465",
   "startAllSession": true,
@@ -17,7 +17,10 @@
   },
   "log": {
     "level": "error",
-    "logger": ["console", "file"]
+    "logger": [
+      "console",
+      "file"
+    ]
   },
   "createOptions": {
     "browserArgs": [
