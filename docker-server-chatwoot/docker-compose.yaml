@@ -1,0 +1,112 @@
+version: '3'
+
+services:
+  base: &base
+    image: chatwoot/chatwoot:develop
+    container_name: chatwoot
+    hostname: lchatwoot
+    env_file: .env 
+    stdin_open: true 
+    tty: true  
+    networks: 
+      - wpp-network     
+  rails:
+    <<: *base
+    container_name: chatwoot-rails
+    hostname: chatwoot-rails
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - NODE_ENV=production
+      - RAILS_ENV=production
+    networks: 
+      - wpp-network
+    entrypoint: docker/entrypoints/rails.sh
+    command: ['bundle', 'exec', 'rails', 's', '-p', '3000', '-b', '0.0.0.0']
+
+  sidekiq:
+    <<: *base
+    container_name: chatwoot-sidekiq
+    hostname: chatwoot-sidekiq
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - NODE_ENV=production
+      - RAILS_ENV=production
+    networks: 
+      - wpp-network
+    restart: unless-stopped
+    command: ['bundle', 'exec', 'sidekiq', '-C', 'config/sidekiq.yml']
+
+  postgres:
+    image: postgres:12
+    container_name: chatwoot-postgres
+    hostname: chatwoot-postgres
+    restart: always
+    volumes:
+      - ./wppconnect-chatwoot/data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=chatwoot
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=chatwoot
+    networks: 
+      - wpp-network
+  
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: chatwoot-pgadmin4
+    hostname: chatwoot-pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "demo@demo.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2021!"
+    depends_on:
+      - postgres
+    networks:
+      - wpp-network
+
+  redis:
+    image: redis:alpine
+    container_name: chatwoot-redis
+    hostname: chatwoot-redis
+    restart: always
+    command: ["sh", "-c", "redis-server --requirepass \"$REDIS_PASSWORD\""]
+    env_file: .env
+    volumes:
+      - ./wppconnect-chatwoot/data/redis:/data
+    networks: 
+      - wpp-network
+
+  wppconnect-server:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    image: wppconnect-server
+    container_name: wppconnect-server
+    hostname: wppconnect-server
+    entrypoint: docker-entrypoint.sh yarn start
+    networks: 
+      - wpp-network
+    tty: true
+
+  nginx:
+    build: 
+      context: ./wppconnect-nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    entrypoint: nginx -g "daemon off;"
+    ports:
+      - "8080:8080" #chatwoot
+      - "8081:8081" #wppconnect
+      - "8082:8082" #pgadmin
+      - "8083:8083" #redis
+    networks: 
+      - wpp-network
+    depends_on:
+      - wppconnect-server
+
+networks: 
+  wpp-network:
+    name: wpp-network
+    driver: bridge

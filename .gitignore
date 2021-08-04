@@ -2,6 +2,5 @@ node_modules
 .husky
 commitlint.config.js
 docker-server-https
-docker-server-chatwoot
 docker-server-cli
 docker-server-cli-nginx
