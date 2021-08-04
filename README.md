@@ -38,8 +38,9 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
   - Pasta: [docker-server-load-balancing](./docker-server-load-balancing)
 
 ## Roadmap (Próximos Vídeos/Tutoriais)
-- Docker #6: Configurando o Client PHP e Client Laravel para consumir os endpoints do WPPConnect.
-- Docker #7: Usando webhook com Client PHP e MySQL em contêineres.
+- Docker #6: Configurando o Chatwoot + WPPConnect.
+- Docker #7: Configurando o Client PHP para consumir os endpoints do WPPConnect.
+- Docker #8: Configurando o Client Laravel para consumir os endpoints do WPPConnect.
 
 ## Comandos Utilizados
 
