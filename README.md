@@ -101,4 +101,4 @@ $ docker network prune
 Acesse o [link](https://docs.docker.com/reference/) para ver todos os comandos do Docker.
 
 ## Postman
-Acesse o [Postman Collection do WPPConnect](https://www.postman.com/hbdbim/workspace/wppconnect-server) com todos os endpoints.
+Acesse o [Postman Collection do WPPConnect](https://documenter.getpostman.com/view/9139457/TzshF4jQ) com todos os endpoints.
