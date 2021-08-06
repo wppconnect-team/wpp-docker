@@ -37,8 +37,11 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=nfc-yDrtnMQ
   - Pasta: [docker-server-load-balancing](./docker-server-load-balancing)
 
+### Docker #6: Configurando o Servers do WPPConnect com Chatwoot utilizando o Nginx.
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=00616mTid-M
+  - Pasta: [docker-server-chatwoot](./docker-server-chatwoot)
+
 ## Roadmap (Próximos Vídeos/Tutoriais)
-- Docker #6: Configurando o Chatwoot + WPPConnect.
 - Docker #7: Configurando o Client PHP para consumir os endpoints do WPPConnect.
 - Docker #8: Configurando o Client Laravel para consumir os endpoints do WPPConnect.
 
