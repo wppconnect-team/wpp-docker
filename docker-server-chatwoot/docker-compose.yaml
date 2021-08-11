@@ -82,6 +82,7 @@ services:
     build: 
       context: ./wppconnect-server
       dockerfile: Dockerfile
+    restart: always
     image: wppconnect-server
     container_name: wppconnect-server
     hostname: wppconnect-server

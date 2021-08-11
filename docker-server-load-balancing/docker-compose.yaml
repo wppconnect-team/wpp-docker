@@ -6,6 +6,7 @@ services:
     build: 
       context: ./wppconnect-server
       dockerfile: Dockerfile
+    restart: always
     image: wppconnect-server
     container_name: wppconnect-server-1
     hostname: wppconnect-server
@@ -25,6 +26,7 @@ services:
     build: 
       context: ./wppconnect-server
       dockerfile: Dockerfile
+    restart: always
     image: wppconnect-server
     container_name: wppconnect-server-2
     hostname: wppconnect-server
@@ -46,6 +48,7 @@ services:
     build: 
       context: ./wppconnect-server
       dockerfile: Dockerfile
+    restart: always
     image: wppconnect-server
     container_name: wppconnect-server-3
     hostname: wppconnect-server
@@ -67,6 +70,7 @@ services:
     build: 
       context: ./wppconnect-server
       dockerfile: Dockerfile
+    restart: always
     image: wppconnect-server
     container_name: wppconnect-server-4
     hostname: wppconnect-server
@@ -88,6 +92,7 @@ services:
     build: 
       context: ./wppconnect-server
       dockerfile: Dockerfile
+    restart: always
     image: wppconnect-server
     container_name: wppconnect-server-5
     hostname: wppconnect-server
