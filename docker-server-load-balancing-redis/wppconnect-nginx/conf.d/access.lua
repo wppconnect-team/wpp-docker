@@ -17,7 +17,7 @@ end
 
 local posicao, err = red:get(session)
 if not (type(posicao) == "string" or type(posicao) == "number")  then
-    local novaposicao = math.random( 0, 5 ) --Quantidade de servidor wppconnect
+    local novaposicao = math.random( 0, 4 ) --Quantidade de servidor wppconnect
     local grava, err = red:set(session, novaposicao)
     if not (type(grava) == "string" or type(grava) == "number")  then
         ngx.say("failed to set session: ", err)
