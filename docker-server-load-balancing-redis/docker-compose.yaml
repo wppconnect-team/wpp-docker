@@ -1,0 +1,158 @@
+version: '3'
+
+services: 
+
+  wppconnect-server-1:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    restart: always
+    image: wppconnect-server
+    container_name: wppconnect-server-1
+    hostname: wppconnect-server-1
+    entrypoint: docker-entrypoint.sh yarn dev
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.2
+    tty: true
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 200M
+    
+  wppconnect-server-2:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    restart: always
+    image: wppconnect-server
+    container_name: wppconnect-server-2
+    hostname: wppconnect-server-2
+    entrypoint: docker-entrypoint.sh yarn dev
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.3
+    tty: true
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 200M
+    depends_on:
+      - wppconnect-server-1
+
+  wppconnect-server-3:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    restart: always
+    image: wppconnect-server
+    container_name: wppconnect-server-3
+    hostname: wppconnect-server-3
+    entrypoint: docker-entrypoint.sh yarn dev
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.4
+    tty: true
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 200M
+    depends_on:
+      - wppconnect-server-2
+
+  wppconnect-server-4:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    restart: always
+    image: wppconnect-server
+    container_name: wppconnect-server-4
+    hostname: wppconnect-server-4
+    entrypoint: docker-entrypoint.sh yarn dev
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.5
+    tty: true
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 200M
+    depends_on:
+      - wppconnect-server-3
+
+  wppconnect-server-5:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    restart: always
+    image: wppconnect-server
+    container_name: wppconnect-server-5
+    hostname: wppconnect-server-5
+    entrypoint: docker-entrypoint.sh yarn dev
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.6
+    tty: true
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 200M
+    depends_on:
+      - wppconnect-server-4
+
+  redis:
+    image: redis
+    container_name: redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.7
+  
+  wppconnect-nginx:
+    build: 
+      context: ./wppconnect-nginx
+      dockerfile: Dockerfile
+    container_name: wppconnect-nginx
+    hostname: wppconnect-nginx
+    entrypoint: nginx -g "daemon off;"
+    ports:
+      - "8081:8081"
+    networks: 
+      wpp-network:
+        ipv4_address: 172.20.0.8
+    volumes: 
+      - ./wppconnect-nginx/conf.d:/etc/nginx/conf.d
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 200M
+    depends_on:
+      - wppconnect-server-1
+      - wppconnect-server-2
+      - wppconnect-server-3
+      - wppconnect-server-4
+      - wppconnect-server-5
+      - redis
+
+networks: 
+  wpp-network:
+    name: wpp-network
+    driver: bridge 
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
