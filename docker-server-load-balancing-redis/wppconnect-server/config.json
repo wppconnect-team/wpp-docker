@@ -3,7 +3,7 @@
     "host": "http://localhost",
     "port": "21465",
     "startAllSession": true,
-    "tokenStoreType": "file",
+    "tokenStoreType": "redis",
     "webhook": {
         "url": null,
         "autoDownload": true,
@@ -52,7 +52,7 @@
         ]
     },
     "mapper": {
-        "enable": false,
+        "enable": true,
         "prefix": "tagone-"
     },
     "db": {
@@ -64,9 +64,10 @@
         "mongoIsRemote": true,
         "mongoURLRemote": "",
         "mongodbPort": 27017,
-        "redisHost": "localhost",
+        "redisHost": "172.20.0.7",
         "redisPort": 6379,
         "redisPassword": "",
-        "redisDb": 0
+        "redisDb": 0,
+        "redisPrefix": "docker"
     }
 }
