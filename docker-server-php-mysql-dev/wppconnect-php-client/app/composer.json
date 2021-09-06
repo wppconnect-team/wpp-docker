@@ -1,0 +1,5 @@
+{
+    "require": {
+        "wppconnect-team/wppconnect-php-client": "^2.0"
+    }
+}

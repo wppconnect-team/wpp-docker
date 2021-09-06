@@ -1,0 +1,85 @@
+version: '3'
+
+services: 
+
+  wppconnect-mysql:
+    image: mysql:5.7
+    container_name: wppconnect-mysql
+    command: --innodb-use-native-aio=0
+    restart: always
+    tty: true
+    volumes: 
+      - ./wppconnect-mysql/sql/db_table.sql:/docker-entrypoint-initdb.d/db_table.sql
+      - ./wppconnect-mysql/db:/var/lib/mysql
+    environment: 
+      - MYSQL_DATABASE=wpp_db
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    networks: 
+      - wpp-network
+
+  wppconnect-phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: wppconnect-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: wppconnect-mysql
+      PMA_DB: wpp_db
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PMA_ARBITRARY: 1
+    depends_on:
+      - wppconnect-mysql
+    networks: 
+      - wpp-network
+
+  wppconnect-server:
+    build: 
+      context: ./wppconnect-server
+      dockerfile: Dockerfile
+    image: wppconnect-server
+    restart: always
+    container_name: wppconnect-server
+    hostname: wppconnect-server
+    entrypoint: dockerize -wait tcp://wppconnect-mysql:3306 -timeout 20s docker-entrypoint.sh yarn dev
+    networks: 
+      - wpp-network
+    tty: true
+    depends_on:
+      - wppconnect-mysql
+  
+  wppconnect-php-client:
+    build: 
+      context: ./wppconnect-php-client
+      dockerfile: Dockerfile
+    image: wppconnect-php-client
+    container_name: wppconnect-php-client
+    hostname: wppconnect-php-client
+    volumes: 
+      - ./wppconnect-php-client/app/html:/var/www/html
+    networks: 
+      - wpp-network
+    tty: true
+    depends_on:
+      - wppconnect-server
+       
+  wppconnect-nginx:
+    build: 
+      context: ./wppconnect-nginx
+      dockerfile: Dockerfile
+    container_name: wppconnect-nginx
+    entrypoint: nginx -g "daemon off;"
+    ports:
+      - "8080:8080" #php-client
+      - "8081:8081" #wppconnect-server
+      - "8082:8082" #phpmyadmin
+    networks: 
+      - wpp-network
+    depends_on:
+      - wppconnect-php-client
+
+networks: 
+  wpp-network:
+    name: wpp-network
+    driver: bridge 

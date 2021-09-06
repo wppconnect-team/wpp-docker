@@ -5,4 +5,3 @@ commitlint.config.js
 docker-server-https
 docker-server-cli
 docker-server-cli-nginx
-docker-server-php-mysql-dev
