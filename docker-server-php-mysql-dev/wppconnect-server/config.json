@@ -10,9 +10,9 @@
         "uploadS3": false,
         "readMessage": true,
         "allUnreadOnStart": false,
-        "listenAcks": true,
-        "onPresenceChanged": true,
-        "onParticipantsChanged": true
+        "listenAcks": false,
+        "onPresenceChanged": false,
+        "onParticipantsChanged": false
     },
     "archive": {
         "enable": false,
@@ -52,7 +52,7 @@
         ]
     },
     "mapper": {
-        "enable": true,
+        "enable": false,
         "prefix": "tagone-"
     },
     "db": {
