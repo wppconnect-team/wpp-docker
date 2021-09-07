@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wppconnect-team/wppconnect-php-client.git",
-                "reference": "121bc7d4e7158ddec594235e15ecfa09347787db"
+                "reference": "265ba7ba26fedc8616d8433c2ffbd5f166880964"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wppconnect-team/wppconnect-php-client/zipball/121bc7d4e7158ddec594235e15ecfa09347787db",
-                "reference": "121bc7d4e7158ddec594235e15ecfa09347787db",
+                "url": "https://api.github.com/repos/wppconnect-team/wppconnect-php-client/zipball/265ba7ba26fedc8616d8433c2ffbd5f166880964",
+                "reference": "265ba7ba26fedc8616d8433c2ffbd5f166880964",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +106,7 @@
                 "issues": "https://github.com/wppconnect-team/wppconnect-php-client/issues",
                 "source": "https://github.com/wppconnect-team/wppconnect-php-client/tree/v2.0.2"
             },
-            "time": "2021-09-06T18:54:51+00:00"
+            "time": "2021-09-06T20:52:34+00:00"
         }
     ],
     "packages-dev": [],

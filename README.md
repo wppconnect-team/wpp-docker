@@ -41,8 +41,11 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=00616mTid-M
   - Pasta: [docker-server-chatwoot](./docker-server-chatwoot)
 
+### Docker #7: Utilizando o Client PHP com o Servers do WPPConnect.
+- Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=o_TBIyxFbNI
+  - Pasta: [docker-server-php-mysql-dev](./docker-server-php-mysql-dev)
+
 ## Roadmap (Próximos Vídeos/Tutoriais)
-- Docker #7: Configurando o Client PHP para consumir os endpoints do WPPConnect.
 - Docker #8: Configurando o Client Laravel para consumir os endpoints do WPPConnect.
 
 ## Comandos Utilizados
