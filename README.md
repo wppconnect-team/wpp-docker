@@ -37,11 +37,11 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=nfc-yDrtnMQ
   - Pasta: [docker-server-load-balancing](./docker-server-load-balancing)
 
-### Docker #6: Configurando o Servers do WPPConnect com Chatwoot utilizando o Nginx.
+### Docker #6: Configurando o Server do WPPConnect com Chatwoot utilizando o Nginx.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=00616mTid-M
   - Pasta: [docker-server-chatwoot](./docker-server-chatwoot)
 
-### Docker #7: Utilizando o Client PHP com o Servers do WPPConnect.
+### Docker #7: Utilizando o Client PHP + MySQL + phpMyAdmin + Nginx com o Server WPPConnect.
 - Tutorial no Canal do Youtube: https://www.youtube.com/watch?v=o_TBIyxFbNI
   - Pasta: [docker-server-php-mysql-dev](./docker-server-php-mysql-dev)
 
