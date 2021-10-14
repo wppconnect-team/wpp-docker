@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-cli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-cli
+  template:
+    metadata:
+      labels:
+        app: server-cli
+    spec:
+      containers:
+        - name: server-cli
+          image: wppconnect/server-cli:latest
+          command: ["/bin/sh", "-c"]
+          args:
+            ["wppserver --secretKey My53cr3tKY --port 21465 --startAllSession"]
+          volumeMounts:
+            - mountPath: /home/tokens
+              name: server-cli-volume
+          ports:
+            - containerPort: 21465
+
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: "500Mi"
+            limits:
+              cpu: "0.5"
+              memory: "1Gi"
+
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 21465
+            periodSeconds: 3
+            failureThreshold: 60
+
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 21465
+            periodSeconds: 3
+            failureThreshold: 1
+
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 21465
+            periodSeconds: 5
+            failureThreshold: 1
+            timeoutSeconds: 1
+            successThreshold: 1
+
+      volumes:
+        - name: server-cli-volume
+          persistentVolumeClaim:
+            claimName: server-cli-volume
