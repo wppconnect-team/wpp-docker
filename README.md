@@ -52,9 +52,8 @@ Faça o download da pasta correspondente ao tutorial abaixo para instalar:
 
 Compila, (re)cria, inicia e anexa um contêiner para um serviço:
 ``` bash
-$ docker-compose up --build
+$ docker-compose up --build --no-start
 ```
-
 Para e remove todos o(s) contêiner(es) e a(s) rede(s):
 ``` bash
 $ docker-compose down
