@@ -1,4 +1,4 @@
-FROM node:14.17-alpine3.13 as builder
+FROM node:lts-alpine3.16 as builder
 
 ENV PORT=21465
 
@@ -12,7 +12,7 @@ WORKDIR /home/node/app
 COPY ./config.json /home/node/app/src
 RUN yarn install
 
-FROM node:14.17-alpine3.13
+FROM node:lts-alpine3.16
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 WORKDIR /home/node/app
 RUN apk add chromium
