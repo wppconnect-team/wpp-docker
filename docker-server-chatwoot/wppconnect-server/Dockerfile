@@ -21,3 +21,4 @@ WORKDIR /home/node/app
 RUN apk add chromium
 COPY --from=builder /home/node/app/ .
 EXPOSE 21465
+ENTRYPOINT ["node", "dist/server.js"]
