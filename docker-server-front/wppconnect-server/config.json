@@ -1,9 +1,13 @@
 {
-  "secretKey": "My53cr3tKY",
+  "secretKey": "THISISMYSECURETOKEN",
   "host": "http://localhost",
   "port": "21465",
+  "deviceName": "WppConnect",
+  "poweredBy": "WPPConnect-Server",
   "startAllSession": true,
   "tokenStoreType": "file",
+  "maxListeners": 15,
+  "customUserDataDir": "./userDataDir/",
   "webhook": {
     "url": null,
     "autoDownload": true,
@@ -12,7 +16,10 @@
     "allUnreadOnStart": false,
     "listenAcks": true,
     "onPresenceChanged": true,
-    "onParticipantsChanged": true
+    "onParticipantsChanged": true,
+    "onReactionMessage": true,
+    "onPollResponse": true,
+    "onRevokedMessage": true
   },
   "archive": {
     "enable": false,
@@ -21,10 +28,7 @@
   },
   "log": {
     "level": "error",
-    "logger": [
-      "console",
-      "file"
-    ]
+    "logger": ["console", "file"]
   },
   "createOptions": {
     "browserArgs": [
@@ -52,7 +56,7 @@
     ]
   },
   "mapper": {
-    "enable": true,
+    "enable": false,
     "prefix": "tagone-"
   },
   "db": {

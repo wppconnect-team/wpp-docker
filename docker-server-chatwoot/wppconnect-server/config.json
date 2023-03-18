@@ -17,7 +17,9 @@
     "listenAcks": true,
     "onPresenceChanged": true,
     "onParticipantsChanged": true,
-    "onReactionMessage": true
+    "onReactionMessage": true,
+    "onPollResponse": true,
+    "onRevokedMessage": true
   },
   "archive": {
     "enable": false,
