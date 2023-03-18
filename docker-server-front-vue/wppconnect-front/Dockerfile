@@ -8,7 +8,7 @@ RUN git clone https://github.com/wppconnect-team/wppconnect-frontend-vue /home/n
 
 WORKDIR /home/node/app
 COPY ./config.js /home/node/app/public
-RUN yarn install
+RUN npm install
 
 FROM node:lts-alpine3.16
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
