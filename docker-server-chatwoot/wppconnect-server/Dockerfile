@@ -10,7 +10,7 @@ RUN git clone https://github.com/wppconnect-team/wppconnect-server.git /home/nod
 
 WORKDIR /home/node/app
 
-COPY ./config.json /home/node/app/src
+COPY ./config.ts /home/node/app/src
 
 RUN yarn install
 RUN yarn build
