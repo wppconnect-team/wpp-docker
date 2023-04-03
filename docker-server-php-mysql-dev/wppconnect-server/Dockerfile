@@ -9,7 +9,7 @@ WORKDIR /home/node
 RUN git clone https://github.com/wppconnect-team/wppconnect-server.git /home/node/app 
 
 WORKDIR /home/node/app
-COPY ./config.json /home/node/app/src
+COPY ./config.ts /home/node/app/src
 RUN yarn install
 
 FROM node:lts-alpine3.16
