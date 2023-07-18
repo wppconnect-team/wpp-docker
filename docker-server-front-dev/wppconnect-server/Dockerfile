@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.16
+FROM node:lts-alpine3.18
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
