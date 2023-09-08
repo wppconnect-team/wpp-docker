@@ -12,6 +12,8 @@ WORKDIR /home/node/app
 
 COPY ./config.ts /home/node/app/src
 
+RUN npm install -g npm@latest
+
 RUN yarn install
 RUN yarn build
 
