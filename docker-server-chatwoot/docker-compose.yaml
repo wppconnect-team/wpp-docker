@@ -41,7 +41,7 @@ services:
     command: ['bundle', 'exec', 'sidekiq', '-C', 'config/sidekiq.yml']
 
   postgres:
-    image: postgres:12
+    image: postgres:latest
     container_name: chatwoot-postgres
     hostname: chatwoot-postgres
     restart: always
